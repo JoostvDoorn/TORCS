@@ -15,7 +15,6 @@
 #
 ##############################################################################
 
-
 # #### The Open Racing Car Simulator ####
 
 ifndef TORCS_BASE
@@ -84,6 +83,9 @@ src_PKGFILES	= $(shell find * -maxdepth 0 -type f -print | grep -v TAGS | grep -
 src_PKGDIR	= ${PACKAGE}-${VERSION}
 
 -include ${MAKE_DEFAULT}
+
+extract-data:
+	unzip data.zip
 
 Make-config: configure Make-config.in
 	rm -f config.status config.log config.cache
